@@ -1,73 +1,42 @@
-# React + TypeScript + Vite
+# Nutrilens 🍽️
+**Autores:** Fernando Castro • Amada Felix
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web para análise de refeições por imagem, cálculo aproximado de calorias e histórico diário.
 
-Currently, two official plugins are available:
+## Visão geral
+O Nutrilens permite ao usuário:
+- Fazer login e manter sessão segura
+- Enviar uma foto (upload ou câmera) para análise automática
+- Ajustar itens e porções manualmente
+- Salvar a refeição com imagem e calorias
+- Visualizar histórico por dia e abrir detalhes em modal
+- Excluir refeições do histórico
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologias
 
-## React Compiler
+### Frontend
+- React + TypeScript
+- TailwindCSS
+- Fetch com autenticação (token JWT)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Banco de dados
+- PostgreSQL
+- Migrations via Prisma
 
-## Expanding the ESLint configuration
+## Requisitos
+- Node.js (versão recomendada: 18+)
+- PostgreSQL (versão recomendada: 14+)
+- pnpm, npm ou yarn
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Como rodar localmente
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1) Clonar e instalar
+```bash
+git clone https://github.com/nando-castro/app_nutrilens.git
+cd app_nutrilens
+cp .env.example .env
+pnpm install
+pnpm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
