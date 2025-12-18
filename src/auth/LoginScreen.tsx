@@ -15,7 +15,8 @@ export function LoginScreen({ onLogin, onGoToRegister }: Props) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
+  const API_BASE_URL =
+    import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -48,11 +49,8 @@ export function LoginScreen({ onLogin, onGoToRegister }: Props) {
     <div className="min-h-screen flex items-center justify-center p-4 bg-gray-100">
       <div className="w-full max-w-[380px] bg-white rounded-[18px] shadow-[0_18px_40px_rgba(15,23,42,0.08)] px-6 pt-7 pb-6 flex flex-col gap-4 lg:px-7 lg:pt-8 lg:pb-7">
         <div>
-          <h1 className="m-0 text-center text-[20px] font-semibold text-gray-900">
-            Entrar
-          </h1>
-          <p className="mt-2 text-center text-[13px] text-gray-600">
-            Acesse sua conta para analisar suas refeições.
+          <p className="font-extrabold text-[32px] mt-2 text-center text-gray-600">
+            🍽️ Nutrilens
           </p>
         </div>
 

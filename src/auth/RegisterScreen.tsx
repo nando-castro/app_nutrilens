@@ -19,7 +19,8 @@ export function RegisterScreen({ onRegister, onBackToLogin }: Props) {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
+  const API_BASE_URL =
+    import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -54,6 +55,9 @@ export function RegisterScreen({ onRegister, onBackToLogin }: Props) {
     <div className="min-h-screen flex items-center justify-center p-4 bg-gray-100">
       <div className="w-full max-w-[380px] bg-white rounded-[18px] shadow-[0_18px_40px_rgba(15,23,42,0.08)] px-6 pt-7 pb-6 flex flex-col gap-4 lg:px-7 lg:pt-8 lg:pb-7">
         <div>
+          <p className="font-extrabold text-[32px] mt-2 text-center text-gray-600">
+            🍽️ Nutrilens
+          </p>
           <h1 className="m-0 text-center text-[20px] font-semibold text-gray-900">
             Criar Conta
           </h1>
