@@ -14,7 +14,7 @@ const LS_LAST_SCREEN_KEY = "nutrilens:lastScreen";
 function App() {
   const [currentScreen, setCurrentScreen] = useState<Screen>("login");
   const [user, setUser] = useState<User | null>(null);
-  const [meals, setMeals] = useState<SavedMeal[]>([]);
+  // const [meals, setMeals] = useState<SavedMeal[]>([]);
 
   // Reidrata sessão no reload
   useEffect(() => {
@@ -59,12 +59,12 @@ function App() {
     localStorage.removeItem(LS_LAST_SCREEN_KEY);
 
     setUser(null);
-    setMeals([]);
+    // setMeals([]);
     setCurrentScreen("login");
   }
 
-  function handleSaveMeal(meal: SavedMeal) {
-    setMeals((prev) => [meal, ...prev]);
+  function handleSaveMeal(_meal: SavedMeal) {
+    // setMeals((prev) => [meal, ...prev]);
     setCurrentScreen("history");
   }
 
@@ -100,7 +100,7 @@ function App() {
         <FoodAnalyzeScreen user={user} onSaveMeal={handleSaveMeal} />
       )}
 
-      {loggedScreen === "history" && <MealsHistoryScreen meals={meals} />}
+      {loggedScreen === "history" && <MealsHistoryScreen />}
     </AppShell>
   );
 }

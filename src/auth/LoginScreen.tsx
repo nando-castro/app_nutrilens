@@ -15,7 +15,7 @@ export function LoginScreen({ onLogin, onGoToRegister }: Props) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const API_BASE_URL = "http://localhost:3000";
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
