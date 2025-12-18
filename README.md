@@ -1,5 +1,5 @@
 # Nutrilens 🍽️
-**Autores:** Fernando Castro • Amada Felix
+**Autores:** Fernando Castro • Amanda Felix
 
 Aplicação web para análise de refeições por imagem, cálculo aproximado de calorias e histórico diário.
 
